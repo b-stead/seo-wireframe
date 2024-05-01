@@ -1,0 +1,1 @@
+Wireframes for SEO decision on styling

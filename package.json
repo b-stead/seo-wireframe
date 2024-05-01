@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "dev": "tailwindcss -i SRC/seo_wireframe/core/static/src/main.css -o SRC/seo_wireframe/core/static/css/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}
