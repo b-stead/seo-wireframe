@@ -4,13 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/4ce217711b.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'css/output.css' %}" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' class="flex flex-col min-h-screen overflow-y-auto">
-    <div class="flex flex-col items-center justify-center h-screen">
-        {% block content %}{% endblock %}
-    </div>
+    <navbar class="bg-sky-950">
+        {% include 'style1/navbar.html'%}
+    </navbar>
+    <main class="flex-shrink-0">
+        
+
+        {% block content %}
+        {% endblock %}
+        
+
+    </main>
+    <!-- Footer-->
+    <footer class="bg-seotur-600 py-4 mt-auto w-full">
+        <div class="container px-5">
+            <div class="flex items-center justify-center flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy; SEO USA 2024</div>
+                </div>
+                <div class="col-auto text-white ml-20">
+                    <a class="link-light small" href="#!">Privacy</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Terms</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="/">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>

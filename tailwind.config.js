@@ -6,7 +6,13 @@ module.exports = {
     "SRC/seo_wireframe/style2/templates/**/*.{html,js}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "seotur":{
+          600: "#2B6982"
+        },  
+      },
+    },
   },
   plugins: [],
 }
