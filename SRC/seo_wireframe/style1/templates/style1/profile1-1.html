@@ -57,6 +57,7 @@
               >
                 <div class="py-6 px-3 mt-32 sm:mt-0">
                   <button
+                    id="contactButton"
                     class="bg-sky-950 active:bg-sky-950 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
                     type="button"
                     style="transition: all 0.15s ease 0s;"
@@ -160,12 +161,45 @@
         </div>
       </div>
     </section>
+    <!-- Modal -->
+    <div id="contactModal" class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none hidden">
+      <div class="relative w-full max-w-md p-6 mx-auto bg-white rounded-lg shadow-md">
+        <div class="flex flex-col items-start justify-center">
+          <button class="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-800" onclick="toggleModal()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+          <h4 class="text-2xl font-semibold">Want to get in touch with Jess?</h4>
+          <p class="mt-1 mb-4 text-gray-600">Complete this form and we'll send them an email for you'.</p>
+          <!-- Contact form -->
+          <div class="relative w-full mb-3">
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-2" for="full-name">Full Name</label>
+            <input type="text" class="border-2 border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-gray-500" placeholder="Full Name">
+          </div>
+          <div class="relative w-full mb-3">
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-2" for="email">Email</label>
+            <input type="email" class="border-2 border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-gray-500" placeholder="Email">
+          </div>
+          <div class="relative w-full mb-3">
+            <label class="block text-xs font-bold uppercase text-gray-700 mb-2" for="message">Message</label>
+            <textarea rows="4" class="border-2 border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-gray-500" placeholder="Type a message..."></textarea>
+          </div>
+          <div class="text-center mt-6">
+            <button class="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none" type="button" onclick="sendMessage()">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Overlay -->
+    <div id="contactOverlay" class="fixed inset-0 bg-black opacity-25 hidden"></div>
   </main>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const showMoreLink = document.querySelector('.show-more');
       const moreInfoDiv = document.getElementById('more-info');
-  
+      const contactButton = document.getElementById('contactButton'); // Add this line
+    
       showMoreLink.addEventListener('click', function(event) {
         event.preventDefault();
         moreInfoDiv.classList.toggle('hidden');
@@ -177,7 +211,25 @@
           showMoreLink.textContent = 'Show more';
         }
       });
+    
+      contactButton.addEventListener('click', function() { // Add this block
+        toggleModal();
+      });
     });
+    
+    function toggleModal() {
+      var modal = document.getElementById('contactModal');
+      var overlay = document.getElementById('contactOverlay');
+      modal.classList.toggle('hidden');
+      overlay.classList.toggle('hidden');
+    }
+    
+    function sendMessage() {
+      // Add functionality to send the message here
+      // This function will be called when the "Send Message" button is clicked
+      // You can implement the logic to send the message via AJAX or any other method
+    }
+    
   </script>
   
 {% endblock %}

@@ -1,0 +1,223 @@
+{% extends 'style2/base.html' %}
+{% load static %}
+{% block title %}Alumni List{% endblock %}
+{% block content %}
+<main class="profile-page">
+    <section class="relative block" style="height: 500px;">
+      <div
+        class="absolute top-0 w-full h-full bg-center bg-cover"
+        style="background-image: url('{% static 'images/alumni.jpg' %}'); background-size: cover; background-position: center;">
+        <span
+          id="blackOverlay"
+          class="w-full h-full absolute opacity-50 bg-black"
+        ></span>
+         <!-- Filter Overlay -->
+        <nav class="absolute top-0 left-0 right-0 flex justify-center items-center h-full -mt-8">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-center py-4">
+                    <!-- Search Box -->
+                    <input type="text" class="bg-gray-200 rounded-l py-2 px-4 outline-none" placeholder="Search..." />
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="flex justify-center py-4">
+                    <!-- Location Dropdown -->
+                    <div class="relative">
+                        <select class="bg-red-600 rounded-l text-white py-2 px-4 outline-none appearance-none">
+                            <option value="">Location</option>
+                            <option value="new_york">New York</option>
+                            <option value="san_francisco">San Francisco</option>
+                            <option value="seattle">Seattle</option>
+                            <option value="washington">Washington</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                            <svg class="h-4 w-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 6l4 4 4-4z"/></svg>
+                        </div>
+                    </div>
+                    <!-- Position Dropdown -->
+                    <div class="relative ml-1">
+                        <select class="bg-red-600 text-white py-2 px-4 outline-none appearance-none">
+                            <option value="">Position</option>
+                            <option value="cfo">CFO</option>
+                            <option value="director">Director</option>
+                            <option value="coo">COO</option>
+                            <option value="partner">Partner</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                            <svg class="h-4 w-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 6l4 4 4-4z"/></svg>
+                        </div>
+                    </div>
+                    <!-- Company Dropdown -->
+                    <div class="relative ml-1">
+                        <select class="bg-red-600 text-white py-2 px-4 outline-none appearance-none">
+                            <option value="">Company</option>
+                            <option value="lloyds_plc">Lloyds Plc</option>
+                            <option value="sandef_ltd">Sandef Ltd</option>
+                            <option value="tata">Tata</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                            <svg class="h-4 w-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 6l4 4 4-4z"/></svg>
+                        </div>
+                    </div>
+                    <!-- Cohort Dropdown -->
+                    <div class="relative ml-1">
+                        <select class="bg-red-600 rounded-r text-white py-2 px-4 outline-none appearance-none">
+                            <option value="">Cohort</option>
+                            <option value="tech_dev_2019">TechDev 2019</option>
+                            <option value="aip_2018">AIP 2018</option>
+                            <option value="college_2023">College 2023</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                            <svg class="h-4 w-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 6l4 4 4-4z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+      </div>
+      <div
+        class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+        style="height: 70px;"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon
+            class="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
+      </div>
+    </section>
+
+    <!--user card section-->
+    <section class="relative py-28 bg-gray-300">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 -mt-80">
+            <!-- User Card 1 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <a href="{% url 'profile2-2' %}">
+                <img src="{% static 'images/team-1-800x800.jpg' %}"  alt="User 1" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 1</h3>
+                <p class="text-gray-600">Description of user 1. with more text <br>as we need to flesh out key info </p>
+                </a>
+            </div>
+            <!-- User Card 2 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <a href="{% url 'profile2-2' %}">
+                <img src="{% static 'images/team-2-800x800.jpg' %}" alt="User 2" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 2</h3>
+                <p class="text-gray-600">Description of user 2.</p>
+                </a>
+            </div>
+            <!-- Add more user cards as needed -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <a href="{% url 'profile2-2' %}">
+                <img src="{% static 'images/team-3-800x800.jpg' %}"  alt="User 1" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 3</h3>
+                <p class="text-gray-600">Description of user 3.</p>
+                </a>
+            </div>
+            <!-- User Card 4 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <a href="{% url 'profile2-2' %}">
+                <img src="{% static 'images/team-4-800x800.png' %}" alt="User 2" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 4</h3>
+                <p class="text-gray-600">Description of user 4.</p>
+                </a>
+            </div>
+            <!-- User Card 1 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <img src="{% static 'images/team-1-800x800.jpg' %}"  alt="User 1" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 1</h3>
+                <p class="text-gray-600">Description of user 1. with more text <br>as we need to flesh out key info </p>
+            </div>
+            <!-- User Card 2 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <img src="{% static 'images/team-2-800x800.jpg' %}" alt="User 2" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 2</h3>
+                <p class="text-gray-600">Description of user 2.</p>
+            </div>
+            <!-- Add more user cards as needed -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <img src="{% static 'images/team-3-800x800.jpg' %}"  alt="User 1" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 3</h3>
+                <p class="text-gray-600">Description of user 3.</p>
+            </div>
+            <!-- User Card 2 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <img src="{% static 'images/team-4-800x800.png' %}" alt="User 2" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 4</h3>
+                <p class="text-gray-600">Description of user 4.</p>
+            </div>
+            <!-- User Card 1 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <img src="{% static 'images/team-1-800x800.jpg' %}"  alt="User 1" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 1</h3>
+                <p class="text-gray-600">Description of user 1. with more text <br>as we need to flesh out key info </p>
+            </div>
+            <!-- User Card 2 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <img src="{% static 'images/team-2-800x800.jpg' %}" alt="User 2" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 2</h3>
+                <p class="text-gray-600">Description of user 2.</p>
+            </div>
+            <!-- Add more user cards as needed -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <img src="{% static 'images/team-3-800x800.jpg' %}"  alt="User 1" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 3</h3>
+                <p class="text-gray-600">Description of user 3.</p>
+            </div>
+            <!-- User Card 2 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md p-4">
+                <img src="{% static 'images/team-4-800x800.png' %}" alt="User 2" class="rounded-full w-24 h-24 mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2">User 4</h3>
+                <p class="text-gray-600">Description of user 4.</p>
+            </div>
+        </div>
+        <!-- Pagination buttons -->
+        <div class="flex justify-center mt-8">
+            <button class="bg-sky-950 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-l">
+                1
+            </button>
+            <button class="bg-sky-950 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-l ml-2">
+                2
+            </button>
+            <button class="bg-sky-950 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-l ml-2">
+                3
+            </button>
+            <!-- Add more pagination buttons as needed -->
+            <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-r ml-2">
+                Next
+            </button>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const showMoreLink = document.querySelector('.show-more');
+      const moreInfoDiv = document.getElementById('more-info');
+  
+      showMoreLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        moreInfoDiv.classList.toggle('hidden');
+        
+        // Toggle text between "Show more" and "Show less"
+        if (showMoreLink.textContent === 'Show more') {
+          showMoreLink.textContent = 'Show less';
+        } else {
+          showMoreLink.textContent = 'Show more';
+        }
+      });
+    });
+  </script>
+{% endblock %}

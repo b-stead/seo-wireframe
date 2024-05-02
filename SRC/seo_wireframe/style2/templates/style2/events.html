@@ -1,0 +1,231 @@
+{% extends 'style2/base.html' %}
+{% load static %}
+{% block title %}Events List{% endblock %}
+{% block content %}
+<main class="profile-page">
+    <section class="relative block" style="height: 500px;">
+      <div
+        class="absolute top-0 w-full h-full bg-center bg-cover"
+        style="background-image: url('{% static 'images/alumni.jpg' %}'); background-size: cover; background-position: center;">
+        <span
+          id="blackOverlay"
+          class="w-full h-full absolute opacity-50 bg-black"
+        ></span>
+         <!-- Filter Overlay -->
+        <nav class="absolute top-0 left-0 right-0 flex justify-center items-center h-full -mt-8">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-center py-4">
+                    <!-- Search Box -->
+                    <input type="text" class="bg-gray-200 rounded-l py-2 px-4 outline-none" placeholder="Search..." />
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="flex justify-center py-4">
+                    <!-- Date Dropdown -->
+                    <div class="relative">
+                        <select class="bg-red-600 rounded-l text-white py-2 px-4 outline-none appearance-none">
+                            <option value="">Date</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                            <svg class="h-4 w-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 6l4 4 4-4z"/></svg>
+                        </div>
+                    </div>
+                    <!-- Position Dropdown -->
+                    <div class="relative ml-1">
+                        <select class="bg-red-600 text-white py-2 px-4 outline-none appearance-none">
+                            <option value="">Location</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+                            <svg class="h-4 w-4 fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 6l4 4 4-4z"/></svg>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+      </div>
+      <div
+        class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+        style="height: 70px;"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon
+            class="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
+      </div>
+    </section>
+
+    <!--event card section-->
+    <section class="relative py-28 bg-gray-300">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 -mt-80">
+            <!-- Event Card 1 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md flex p-4">
+                <!-- Profile Picture -->
+                <div class="w-24 h-24 flex-none">
+                    <img src="{% static 'images/event-1-small.png' %}" alt="User 1" class="w-full h-full object-cover" />
+                </div>
+                <!-- Event Details -->
+                <div class="ml-4">
+                    <h3 class="text-xl font-semibold mb-2">Event Title 1</h3>
+                    <p class="text-gray-600">Event description goes here. Include key details about the event, such as date, time, location, and any other relevant information.</p>
+                    <!-- Add more event details as needed -->
+                </div>
+                <div class="flex flex-col ml-8">
+                    <button
+                    class="bg-sky-950 text-white active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mb-2"
+                    type="button"
+                    style="transition: all 0.15s ease 0s;"
+                    >
+                    Details
+                    </button>
+                    <button
+                    class="bg-sky-950 text-white active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none "
+                    type="button"
+                    style="transition: all 0.15s ease 0s;"
+                    >
+                    Apply
+                    </button>
+                </div>
+
+            </div>
+            <!-- Event Card 2 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md flex p-4">
+                <!-- Profile Picture -->
+                <div class="w-24 h-24 flex-none">
+                    <img src="{% static 'images/event-2-small.png' %}" alt="User 2" class="w-full h-full object-cover" />
+                </div>
+                <!-- Event Details -->
+                <div class="ml-4">
+                    <h3 class="text-xl font-semibold mb-2">Event Title 2</h3>
+                    <p class="text-gray-600">Event description goes here. Include key details about the event, such as date, time, location, and any other relevant information.</p>
+                    <!-- Add more event details as needed -->
+                </div>
+                <div class="flex flex-col ml-8">
+                    <button
+                    class="bg-sky-950 text-white active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mb-2"
+                    type="button"
+                    style="transition: all 0.15s ease 0s;"
+                    >
+                    Details
+                    </button>
+                    <button
+                    class="bg-neutral-300 text-white active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none "
+                    type="button"
+                    style="transition: all 0.15s ease 0s;"
+                    >
+                    Apply
+                    </button>
+                </div>
+            </div>
+            <!-- Event Card 3 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md flex p-4">
+                <!-- Profile Picture -->
+                <div class="w-24 h-24 flex-none">
+                    <img src="{% static 'images/event-3-small.png' %}" alt="User 1" class="w-full h-full object-cover" />
+                </div>
+                <!-- Event Details -->
+                <div class="ml-4">
+                    <h3 class="text-xl font-semibold mb-2">Event Title 3</h3>
+                    <p class="text-gray-600">Event description goes here. Include key details about the event, such as date, time, location, and any other relevant information.</p>
+                    <!-- Add more event details as needed -->
+                </div>
+                <div class="flex flex-col ml-8">
+                    <button
+                    class="bg-sky-950 text-white active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mb-2"
+                    type="button"
+                    style="transition: all 0.15s ease 0s;"
+                    >
+                    Details
+                    </button>
+                    <button
+                    class="bg-sky-950 text-white active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none "
+                    type="button"
+                    style="transition: all 0.15s ease 0s;"
+                    >
+                    Apply
+                    </button>
+                </div>
+            </div>
+            <!-- Event Card 4 -->
+            <div class="border border-gray-200 bg-white rounded-lg shadow-md flex p-4">
+                <!-- Profile Picture -->
+                <div class="w-24 h-24 flex-none">
+                    <img src="{% static 'images/event-4-small.png' %}" alt="User 2" class="w-full h-full object-cover" />
+                </div>
+                <!-- Event Details -->
+                <div class="ml-4">
+                    <h3 class="text-xl font-semibold mb-2">Event Title 4</h3>
+                    <p class="text-gray-600">Event description goes here. Include key details about the event, such as date, time, location, and any other relevant information.</p>
+                    <!-- Add more event details as needed -->
+                </div>
+                <div class="flex flex-col ml-8">
+                    <button
+                    class="bg-sky-950 text-white active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mb-2"
+                    type="button"
+                    style="transition: all 0.15s ease 0s;"
+                    >
+                    Details
+                    </button>
+                    <button
+                    class="bg-neutral-300 text-white active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none "
+                    type="button"
+                    style="transition: all 0.15s ease 0s;"
+                    >
+                    Apply
+                    </button>
+                </div>
+                
+            </div>
+
+        </div>
+        <!-- Pagination buttons -->
+        <div class="flex justify-center mt-8">
+            <button class="bg-sky-950 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-l">
+                1
+            </button>
+            <button class="bg-sky-950 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-l ml-2">
+                2
+            </button>
+            <button class="bg-sky-950 hover:bg-cyan-700 text-white font-semibold py-2 px-4 rounded-l ml-2">
+                3
+            </button>
+            <!-- Add more pagination buttons as needed -->
+            <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-r ml-2">
+                Next
+            </button>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const showMoreLink = document.querySelector('.show-more');
+      const moreInfoDiv = document.getElementById('more-info');
+  
+      showMoreLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        moreInfoDiv.classList.toggle('hidden');
+        
+        // Toggle text between "Show more" and "Show less"
+        if (showMoreLink.textContent === 'Show more') {
+          showMoreLink.textContent = 'Show less';
+        } else {
+          showMoreLink.textContent = 'Show more';
+        }
+      });
+    });
+  </script>
+{% endblock %}

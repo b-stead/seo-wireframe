@@ -10,7 +10,10 @@ module.exports = {
       colors: {
         "seotur":{
           600: "#2B6982"
-        },  
+        },
+        "dashbg":{
+          700: "#0369a1"
+        }  
       },
     },
   },
