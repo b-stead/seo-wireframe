@@ -2,11 +2,18 @@
 {% load static %}
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/4ce217711b.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{% static 'css/output.css' %}" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4ce217711b.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="144x144" src="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/x-icon" src="{% static 'favicon/favicon.ico' %}">
+    <link rel="manifest" src="{% static 'favicon/site.webmanifest' %}">
+    <link rel="mask-icon" src="{% static 'favicon/safari-pinned-tab.svg' %}" color="#000000">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" href="{% static 'css/output.css' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' class="flex flex-col min-h-screen overflow-y-auto">
     <navbar class="bg-sky-950">

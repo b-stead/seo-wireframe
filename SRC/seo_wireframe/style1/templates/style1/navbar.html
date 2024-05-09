@@ -11,8 +11,6 @@
       <img src="{% static 'images/seo-usa-logo.png' %}" alt="Logo" class="object-contain h-16 w-auto">
       </a>
         <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            
-        
           <a
             class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
             href="{% url 'landing1' %}"
@@ -53,25 +51,29 @@
           </ul>
           <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li class="flex items-center">
-              <a href="{% url 'events1' %}">
+              <a href="https://toc.mysmartjobboard.com">
                 <button
                   class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
                   type="button"
                   style="transition: all 0.15s ease 0s;"
                 >
-                Opportunities
+                Job Opportunities
                 </button>
               </a>
             </li>
-              <li class="flex items-center">
-                <button
-                  class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
-                  type="button"
-                  style="transition: all 0.15s ease 0s;"
-                >
-                  My Events
-                </button>
-              </li>
+            <li class="flex items-center">
+              <div class="relative">
+                  <select
+                      class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+                      style="transition: all 0.15s ease 0s;"
+                      onchange="window.location.href = this.value;"
+                  >
+                      <option disabled selected>Events</option>
+                      <option value="#">Upcoming Events</option>
+                      <option value="#">Past Events</option>
+                  </select>
+              </div>
+            </li>
               <li class="flex items-center">
                 <a href="{% url 'profile1' %}">
                   <button
